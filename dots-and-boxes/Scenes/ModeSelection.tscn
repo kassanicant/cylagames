@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://bahp60abtugm"]
+
+[ext_resource type="Script" uid="uid://cmev6ycg3oyyr" path="res://ModeSelection.gd" id="1_8bi38"]
+[ext_resource type="Texture2D" uid="uid://bkw45p72ocnju" path="res://ASSETS/Background.png" id="2_gkimq"]
+[ext_resource type="Texture2D" uid="uid://b4hismw0bi5f7" path="res://ASSETS/HowToPlay.png" id="3_olpxh"]
+[ext_resource type="Texture2D" uid="uid://bmjk4qk3ssqar" path="res://ASSETS/PlayFriendBtn.png" id="4_u2t0j"]
+[ext_resource type="Texture2D" uid="uid://c2rwwp4dhf6y" path="res://ASSETS/PlayBotBtn.png" id="5_baegg"]
+[ext_resource type="Texture2D" uid="uid://d1lwpicefa2df" path="res://ASSETS/BackBtn.png" id="6_gkimq"]
+
+[node name="ModeSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8bi38")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -16.0
+offset_right = 516.0
+offset_bottom = 667.0
+texture = ExtResource("2_gkimq")
+
+[node name="HowToPlay" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 50.0
+offset_right = 379.0
+offset_bottom = 314.0
+texture = ExtResource("3_olpxh")
+expand_mode = 1
+
+[node name="BtnFriend" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 393.0
+offset_right = 427.0
+offset_bottom = 528.0
+texture_normal = ExtResource("4_u2t0j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BtnBot" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 385.0
+offset_right = 236.0
+offset_bottom = 526.0
+texture_normal = ExtResource("5_baegg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BackBtn" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 25.0
+offset_right = 76.0
+offset_bottom = 76.0
+texture_normal = ExtResource("6_gkimq")
+ignore_texture_size = true
+stretch_mode = 0

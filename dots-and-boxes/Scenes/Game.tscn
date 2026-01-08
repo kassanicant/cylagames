@@ -1,0 +1,142 @@
+[gd_scene load_steps=10 format=3 uid="uid://x3sbrhie3ia6"]
+
+[ext_resource type="Texture2D" uid="uid://bkw45p72ocnju" path="res://ASSETS/Background.png" id="2_kldst"]
+[ext_resource type="AudioStream" uid="uid://dkhok3sg07kh1" path="res://ASSETS/Scribble.wav" id="3_b2bpf"]
+[ext_resource type="Texture2D" uid="uid://d1lwpicefa2df" path="res://ASSETS/BackBtn.png" id="5_7lihs"]
+[ext_resource type="Script" uid="uid://ddmhie4vx1vps" path="res://Scenes/Board.gd" id="6_7lihs"]
+[ext_resource type="FontFile" uid="uid://da3xuve5qemnu" path="res://ASSETS/Jua-Regular.ttf" id="7_bf53h"]
+[ext_resource type="AudioStream" uid="uid://df4yuxfhd8o16" path="res://ASSETS/Countdown5Secs.wav" id="7_fgofq"]
+[ext_resource type="Texture2D" uid="uid://do4ovkdif06bu" path="res://ASSETS/RetryBtn.png" id="8_71axn"]
+[ext_resource type="Texture2D" uid="uid://s74tlogr1dce" path="res://ASSETS/MainMenuBtn.png" id="9_dahhg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3so38"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -15.0
+offset_right = 517.0
+offset_bottom = 666.0
+mouse_filter = 2
+texture = ExtResource("2_kldst")
+
+[node name="ScoreP1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 64.0
+offset_right = 243.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.238815, 0.55374, 0.940483, 1)
+theme_override_fonts/font = ExtResource("7_bf53h")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="ScoreP2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 66.0
+offset_right = 338.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.768627, 0, 0.0627451, 1)
+theme_override_fonts/font = ExtResource("7_bf53h")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_b2bpf")
+volume_db = 5.098
+
+[node name="TurnTimer" type="Timer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 20.0
+offset_right = 492.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("7_bf53h")
+theme_override_font_sizes/font_size = 30
+
+[node name="Board" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 137.0
+offset_right = 460.0
+offset_bottom = 637.0
+script = ExtResource("6_7lihs")
+
+[node name="PreviewLine" type="Line2D" parent="Board"]
+position = Vector2(-21, -143)
+points = PackedVector2Array(-1, 1)
+
+[node name="CountdownSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fgofq")
+
+[node name="BackBtn" type="TextureButton" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 22.0
+offset_top = 36.0
+offset_right = 88.0
+offset_bottom = 93.0
+texture_normal = ExtResource("5_7lihs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="GameOverLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverPanel" type="Control" parent="GameOverLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 74.0
+offset_top = 106.0
+offset_right = 432.0
+offset_bottom = 552.0
+
+[node name="ColorRect" type="ColorRect" parent="GameOverLayer/GameOverPanel"]
+layout_mode = 0
+offset_right = 349.0
+offset_bottom = 411.0
+color = Color(0.270588, 0.270588, 0.270588, 0.733333)
+
+[node name="TitleLabel" type="Label" parent="GameOverLayer/GameOverPanel"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 85.0
+offset_right = 309.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(0.991419, 0.991602, 0.987409, 1)
+theme_override_fonts/font = ExtResource("7_bf53h")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3so38")
+text = "WINNER"
+
+[node name="RetryBtn" type="TextureButton" parent="GameOverLayer/GameOverPanel"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 249.0
+offset_right = 279.0
+offset_bottom = 321.0
+texture_normal = ExtResource("8_71axn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MenuBtn" type="TextureButton" parent="GameOverLayer/GameOverPanel"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 248.0
+offset_right = 155.0
+offset_bottom = 322.0
+texture_normal = ExtResource("9_dahhg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="BackBtn" to="." method="_on_back_btn_pressed"]
