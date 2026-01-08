@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvq7ubqc1tok7"]
+
+[ext_resource type="Texture2D" uid="uid://00a6boxtmcvo" path="res://ASsets/CardboardBox.png" id="1_s1y1h"]
+[ext_resource type="Script" uid="uid://cly64qjkfq6bf" path="res://Scripts/GameBox.gd" id="2_xoc3k"]
+
+[node name="GameBox" type="TextureRect"]
+custom_minimum_size = Vector2(60, 60)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_s1y1h")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("2_xoc3k")
+
+[node name="HiddenAnswer" type="Sprite2D" parent="."]
+position = Vector2(50, 50)
+
+[node name="GuessSlot" type="CenterContainer" parent="HiddenAnswer"]
+anchors_preset = -1
+anchor_left = -28.0
+anchor_top = -96.0
+anchor_right = 22.0
+anchor_bottom = -41.0

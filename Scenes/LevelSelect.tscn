@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqvq18rbxkpl2"]
+
+[ext_resource type="Script" uid="uid://7rsmtbtn57gg" path="res://LevelSelect.gd" id="1_w36p5"]
+[ext_resource type="Texture2D" uid="uid://2ijooqlwym0w" path="res://ASsets/LevelBox1.png" id="2_b56eh"]
+[ext_resource type="Texture2D" uid="uid://ctk0nhjde52g" path="res://ASsets/SelectLevelBackground.png" id="2_qwtt3"]
+[ext_resource type="Texture2D" uid="uid://clrmaffh520v" path="res://ASsets/LevelBox2.png" id="3_qwtt3"]
+[ext_resource type="Texture2D" uid="uid://da4runv2j66f6" path="res://ASsets/LevelBox3.png" id="4_rhsa1"]
+[ext_resource type="Texture2D" uid="uid://cdhbbgs72o0to" path="res://ASsets/LevelBox4.png" id="5_pp72x"]
+[ext_resource type="Texture2D" uid="uid://dfcfn8mivsdgj" path="res://ASsets/LevelBox5.png" id="6_7eg28"]
+[ext_resource type="Texture2D" uid="uid://cwsij53gnrkyx" path="res://ASsets/LevelBox6.png" id="7_v7iwv"]
+[ext_resource type="Texture2D" uid="uid://bodrqxp5fb7yt" path="res://ASsets/ButtonBack.png" id="9_rhsa1"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_w36p5")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 600.0
+texture = ExtResource("2_qwtt3")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 200.0
+offset_right = 1639.0
+offset_bottom = 1150.0
+scale = Vector2(0.2, 0.2)
+columns = 3
+
+[node name="LevelBox1" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_b56eh")
+
+[node name="LevelBox2" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_qwtt3")
+
+[node name="LevelBox3" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_rhsa1")
+
+[node name="LevelBox4" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_pp72x")
+
+[node name="LevelBox5" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_7eg28")
+
+[node name="LevelBox6" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_v7iwv")
+
+[node name="BtnBack" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 47.0
+offset_bottom = 47.0
+texture_normal = ExtResource("9_rhsa1")
+ignore_texture_size = true
+stretch_mode = 0

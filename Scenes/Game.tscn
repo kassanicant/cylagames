@@ -1,0 +1,124 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmanmr1d5h7m6"]
+
+[ext_resource type="Script" uid="uid://bdl0v444o6soh" path="res://Scripts/Game.gd" id="1_iukft"]
+[ext_resource type="FontFile" uid="uid://s81oufiojxs5" path="res://ASsets/Silver.ttf" id="2_7lihs"]
+[ext_resource type="Texture2D" uid="uid://cktbxt1jmj5vi" path="res://ASsets/GameBackground.png" id="2_j5yw3"]
+[ext_resource type="Texture2D" uid="uid://bodrqxp5fb7yt" path="res://ASsets/ButtonBack.png" id="2_kldst"]
+[ext_resource type="Texture2D" uid="uid://bhlo77vo53p0f" path="res://ASsets/ButtonNext.png" id="3_b2bpf"]
+[ext_resource type="Texture2D" uid="uid://dbolmxroeenqr" path="res://ASsets/ButtonReset.png" id="6_7lihs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b2bpf"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iukft")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 600.0
+mouse_filter = 2
+texture = ExtResource("2_j5yw3")
+expand_mode = 1
+
+[node name="GameArea" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 127.0
+offset_right = 384.0
+offset_bottom = 531.0
+alignment = 1
+
+[node name="BoxGrid" type="GridContainer" parent="GameArea"]
+custom_minimum_size = Vector2(350, 250)
+layout_mode = 2
+columns = 4
+
+[node name="Bench" type="PanelContainer" parent="GameArea"]
+custom_minimum_size = Vector2(60, 70)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b2bpf")
+
+[node name="Slots" type="HBoxContainer" parent="GameArea/Bench"]
+layout_mode = 2
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 178.0
+offset_top = -4.0
+offset_right = 235.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.103744, 0.103744, 0.103744, 1)
+theme_override_fonts/font = ExtResource("2_7lihs")
+theme_override_font_sizes/font_size = 60
+text = "0/0"
+
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 290.0
+offset_top = -2.0
+offset_right = 395.0
+offset_bottom = 53.0
+theme_override_colors/font_shadow_color = Color(0.196962, 0.471177, 0.325436, 1)
+theme_override_font_sizes/font_size = 35
+
+[node name="BtnBack" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 45.0
+offset_bottom = 49.0
+texture_normal = ExtResource("2_kldst")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="GameOverLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="GameOverPanel" type="Panel" parent="GameOverLayer"]
+visible = false
+offset_left = 76.0
+offset_top = 151.0
+offset_right = 332.0
+offset_bottom = 222.0
+
+[node name="MessageLabel" type="Label" parent="GameOverLayer/GameOverPanel"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = -8.0
+offset_right = 282.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.0850145, 0.0593984, 0.0336129, 1)
+theme_override_colors/font_outline_color = Color(0.925353, 0.925353, 0.925353, 1)
+theme_override_fonts/font = ExtResource("2_7lihs")
+theme_override_font_sizes/font_size = 110
+text = "YOU WIN!"
+horizontal_alignment = 1
+
+[node name="BtnNext" type="TextureButton" parent="GameOverLayer/GameOverPanel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 214.0
+offset_right = 212.0
+offset_bottom = 295.0
+texture_normal = ExtResource("3_b2bpf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BtnReset" type="TextureButton" parent="GameOverLayer/GameOverPanel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 213.0
+offset_right = 108.0
+offset_bottom = 295.0
+texture_normal = ExtResource("6_7lihs")
+ignore_texture_size = true
+stretch_mode = 0

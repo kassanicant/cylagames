@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgy1pqdaarl6p"]
+
+[ext_resource type="Script" uid="uid://cb25thlh3lui3" path="res://Scripts/MainMenu.gd" id="1_853f1"]
+[ext_resource type="Texture2D" uid="uid://brldarksiesp2" path="res://ASsets/MainMenuBackground.png" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://bgtf7s4r5tmc2" path="res://ASsets/Play.png" id="3_8saeu"]
+[ext_resource type="Texture2D" uid="uid://bodrqxp5fb7yt" path="res://ASsets/ButtonBack.png" id="4_ghw46"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_853f1")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 600.0
+mouse_filter = 2
+texture = ExtResource("1_tt5f1")
+expand_mode = 1
+
+[node name="BtnPlay" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 285.0
+offset_right = 297.0
+offset_bottom = 380.0
+texture_normal = ExtResource("3_8saeu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BtnQuit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 407.0
+offset_right = 222.0
+offset_bottom = 447.0
+texture_normal = ExtResource("4_ghw46")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="BtnQuit" to="." method="_on_btn_quit_pressed"]

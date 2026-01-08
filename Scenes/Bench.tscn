@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://tgjhkwj02e41"]
+
+[ext_resource type="Script" uid="uid://bkye22q2j61kh" path="res://Bench.gd" id="1_2ggnt"]
+
+[node name="Bench" type="PanelContainer"]
+offset_right = 365.0
+offset_bottom = 67.0
+script = ExtResource("1_2ggnt")
+
+[node name="Slots" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1

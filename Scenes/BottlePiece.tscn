@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://oln7y0x6rw43"]
+
+[ext_resource type="Texture2D" uid="uid://bd3x8ltcc7y4x" path="res://ASsets/Bottles/Black.png" id="1_nffrj"]
+[ext_resource type="Script" uid="uid://crnw3y11832h3" path="res://BottlePiece.gd" id="2_cwthj"]
+
+[node name="BottlePiece" type="TextureRect"]
+custom_minimum_size = Vector2(60, 80)
+offset_right = 60.0
+offset_bottom = 112.0
+mouse_filter = 0
+texture = ExtResource("1_nffrj")
+expand_mode = 1
+script = ExtResource("2_cwthj")
